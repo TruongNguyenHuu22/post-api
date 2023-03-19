@@ -20,6 +20,10 @@ Route::get('/greeting', function () {
     return new JsonResponse(['message' => 'hello world']);
 });
 
+Route::get('/hello', function () {
+    return new JsonResponse(['message' => 'hello']);
+});
+
 Route::get(
     '/users',
     [UserController::class, 'index']
