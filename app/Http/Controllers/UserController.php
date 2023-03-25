@@ -13,4 +13,9 @@ class UserController extends Controller
         $users = User::query();
         return UserResource::collection($users->paginate());
     }
+    public function show(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        return UserResource::make($user);
+    }    
 }
